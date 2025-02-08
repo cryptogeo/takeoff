@@ -39,7 +39,7 @@ export default function Home() {
             }`}
             onClick={() => {
               setActiveSection(section)
-              setActiveContent(null)
+              setActiveContent(null) // Reset active content when changing section
             }}
           >
             {section}
