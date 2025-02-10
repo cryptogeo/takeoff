@@ -1,32 +1,28 @@
-"use client";
+'use client'; // Add this line to mark the component as a client component
 
-import ApiKeyDisplay from "@/components/api-key-display";
-import CompanyForm from "@/components/company-form";
-import { useState } from "react";
+import React, { useState } from 'react';
 
-export default function Voice() {
-  const [step, setStep] = useState(1);
-  const [companyInfo, setCompanyInfo] = useState(null);
-  const [apiKey, setApiKey] = useState("");
+interface CompanyInfo {
+    // Define the structure of the info object here
+    name: string; // Example property
+    // Add other properties as needed
+}
 
-  const handleCompanySubmit = (info) => {
-    setCompanyInfo(info);
-    // Simulate API key generation
-    setApiKey("API_" + Math.random().toString(36).substr(2, 9));
-    setStep(2);
-  };
+export default function VoicePage() {
+    const [apiKey, setApiKey] = useState("");
+    const [companyInfo, setCompanyInfo] = useState<CompanyInfo | null>(null); // Adjust type as needed
 
-  return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Developer Platform</h1>
-      {step === 1 ? (
-        <CompanyForm onSubmit={handleCompanySubmit} />
-      ) : (
-        <ApiKeyDisplay
-          apiKey={apiKey}
-          companyInfo={companyInfo}
-        />
-      )}
-    </div>
-  );
+    // Define the type for the info parameter
+    const handleCompanySubmit = (info: CompanyInfo) => {
+        setCompanyInfo(info);
+        // Simulate API key generation
+        setApiKey("API_" + Math.random().toString(36).substr(2, 9));
+    };
+
+    return (
+        <div>
+            <h1>Voice Page</h1>
+            {/* Your form and other components go here */}
+        </div>
+    );
 }

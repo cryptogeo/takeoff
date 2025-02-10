@@ -3,12 +3,22 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { contentData } from './data/content'
+import ImageCarousel from "./components/image-carousel"
+
+// Define the type for active content
+interface ActiveContent {
+  response: string;
+  theory: string;
+}
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('Intro')
-  const [activeContent, setActiveContent] = useState<{response: string, theory: string} | null>(null)
+  const [activeContent, setActiveContent] = useState<ActiveContent | null>(null)
 
   const currentSection = contentData.find(section => section.section === activeSection)
+
+  const images = ["url1", "url2", "url3"] // Replace with actual image URLs
+  const [currentImage, setCurrentImage] = useState(0)
 
   return (
     <main className="min-h-screen flex flex-col items-center bg-[#fecfb3] p-4">
@@ -85,6 +95,12 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      <ImageCarousel
+        images={images}
+        currentImage={currentImage}
+        setCurrentImage={setCurrentImage}
+      />
     </main>
   )
 }

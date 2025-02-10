@@ -1,54 +1,27 @@
-import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 
-export default function ApiKeyDisplay({ apiKey, companyInfo }) {
-  const [copied, setCopied] = useState(false);
+// Define the types for the props in the ApiKeyDisplay function
+interface ApiKeyDisplayProps {
+    apiKey: string; // Define apiKey as a string
+    companyInfo: any; // Adjust type as needed based on the structure of companyInfo
+}
 
-  const copyApiKey = () => {
-    navigator.clipboard.writeText(apiKey);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+export default function ApiKeyDisplay({ apiKey, companyInfo }: ApiKeyDisplayProps) {
+    const [copied, setCopied] = useState(false);
 
-  return (
-    <div className="space-y-4">
-      <h2 className="text-xl font-semibold">Company Information</h2>
-      {companyInfo.companyLogo && (
-        <div className="mb-4">
-          <Image
-            src={URL.createObjectURL(companyInfo.companyLogo)}
-            alt="Company Logo"
-            width={100}
-            height={100}
-            className="object-contain"
-          />
+    const copyApiKey = () => {
+        navigator.clipboard.writeText(apiKey);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000); // Reset copied state after 2 seconds
+    };
+
+    return (
+        <div>
+            <h2>API Key</h2>
+            <p>{apiKey}</p>
+            <button onClick={copyApiKey}>
+                {copied ? "Copied!" : "Copy API Key"}
+            </button>
         </div>
-      )}
-      <p>
-        <strong>Name:</strong> {companyInfo.companyName}
-      </p>
-      <p>
-        <strong>Address:</strong> {companyInfo.companyAddress}
-      </p>
-      <p>
-        <strong>Contact:</strong> {companyInfo.companyContact}
-      </p>
-
-      <h2 className="text-xl font-semibold mt-6">Your API Key</h2>
-      <div className="flex items-center space-x-2">
-        <input
-          type="text"
-          value={apiKey}
-          readOnly
-          className="w-full px-3 py-2 border rounded bg-gray-100"
-        />
-        <button
-          onClick={copyApiKey}
-          className="bg-green-500 text-white px-4 py-2 rounded"
-        >
-          {copied ? "Copied!" : "Copy"}
-        </button>
-      </div>
-    </div>
-  );
+    );
 }

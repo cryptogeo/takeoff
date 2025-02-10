@@ -1,64 +1,33 @@
-import { Button } from "@/components/ui/button";
-import { Globe, Home, Menu, MessageCircle, PlusCircle, Search } from "lucide-react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link'; // Ensure you have this import
 
-export default function SideHeader() {
-  return (
-    <header className="w-64 bg-white border-r border-gray-200 p-4 flex flex-col">
-      <div className="flex items-center justify-between mb-8">
-        <Link
-          href="/"
-          className="text-primary font-bold text-2xl"
-        >
-          <Home className="w-8 h-8" />
-          <span className="sr-only">Airbnb</span>
-        </Link>
-        <Button
-          variant="ghost"
-          size="icon"
-        >
-          <Menu className="w-5 h-5" />
-          <span className="sr-only">Menu</span>
-        </Button>
-      </div>
-      <nav className="space-y-4 mb-8">
-        <NavLink
-          href="#"
-          icon={<Search className="w-5 h-5" />}
-          text="Explore"
-        />
-        <NavLink
-          href="#"
-          icon={<PlusCircle className="w-5 h-5" />}
-          text="Host your home"
-        />
-        <NavLink
-          href="#"
-          icon={<MessageCircle className="w-5 h-5" />}
-          text="Messages"
-        />
-      </nav>
-      <div className="mt-auto">
-        <Button
-          variant="outline"
-          className="w-full"
-        >
-          <Globe className="w-5 h-5 mr-2" />
-          Language
-        </Button>
-      </div>
-    </header>
-  );
+// Define the types for the props in the NavLink function
+interface NavLinkProps {
+    href: string; // Define href as a string
+    icon: JSX.Element | string; // Allow icon to be a React element or a string
+    text: string; // Define text as a string
 }
 
-function NavLink({ href, icon, text }) {
-  return (
-    <Link
-      href={href}
-      className="flex items-center space-x-2 text-muted-foreground hover:text-primary"
-    >
-      {icon}
-      <span>{text}</span>
-    </Link>
-  );
+function NavLink({ href, icon, text }: NavLinkProps) {
+    return (
+        <Link href={href}>
+            <div className="flex items-center space-x-2">
+                <span className="text-xl">{icon}</span> {/* Use text or icon here */}
+                <span>{text}</span>
+            </div>
+        </Link>
+    );
+}
+
+// Example usage of NavLink in the SideHeader component
+export default function SideHeader() {
+    return (
+        <nav>
+            {/* Example usage of NavLink */}
+            <NavLink href="/some-path" icon="🏠" text="Home" /> {/* Use an emoji as a placeholder */}
+            <NavLink href="/about" icon="ℹ️" text="About" />
+            <NavLink href="/contact" icon="📞" text="Contact" />
+            {/* Add more links as needed */}
+        </nav>
+    );
 }
