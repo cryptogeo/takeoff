@@ -1,6 +1,8 @@
 export const contentData = [
   {
     section: "Intro",
+    defaultResponse: "Please select an option to see the suggested response for the Intro section.",
+    defaultTheory: "The purpose of the intro is to NOT SOUND LIKE A SALESPERSON!  If you get these objections, you need to work on your tone.  Slow down, speak from the gut and react like a human.  Prevention is better than cure.",
     subOptions: [
       {
         title: "Where did you get my number?",
@@ -31,6 +33,8 @@ export const contentData = [
   },
   {
     section: "Main Body",
+    defaultResponse: "Please select an option to see the suggested response for the Main Body section.",
+    defaultTheory: "The purpose of the main body is to GET an OBJECTION.  If you do, you are doing well - altho it should be at the END of the main body when you ask for it not before.  tone and variety of pace/pitch is key in the main body.",
     subOptions: [
       {
         title: "I have an Advisor",
@@ -91,6 +95,8 @@ export const contentData = [
   },
   {
     section: "Mortgage Idea",
+    defaultResponse: "Please select an option to see the suggested response for the Mortgage Idea section.",
+    defaultTheory: "Once you get to the mortage idea - life gets easier.  You can now show you can add value.  Once you've said you can get HMRC to pay off mortgage then its more on him to SHOW YOU why it's a bad idea.  Be brave.",
     subOptions: [
       {
         title: "I don't believe you",
@@ -121,6 +127,8 @@ export const contentData = [
   },
   {
     section: "Close",
+    defaultResponse: "Please select an option to see the suggested response for the Close section.",
+    defaultTheory: "If you get this far there is no excuse that people should have for not coming to see you.  Not one that makes sense anyway. Nothing is more important/valuable than spending 20 mins to get a 5mGBP mort paid off",
     subOptions: [
       {
         title: "I'm busy for X weeks",
@@ -144,7 +152,7 @@ export const contentData = [
       },
       {
         title: "What's in it for you?",
-        response: "If I show you that idea and that saves you, let's say, 3 grand a month—because that's what your mortgage is costing you—after six months, how much more money do you have? 18 grand more. So you've got 36 grand more after a year, right? So if I have saved you 36 grand over the course of a year and then at the end of that year, you're thinking, I wonder what I should do with x grand and where I should invest it? I'd like to think you were a good enough person to give me a crack at telling you. Right? You're at least going to give me a try because you can't owe me that obligation morally, if not professionally so. That's how it works. I can't tell you the number of clients that have gone on to become long-term clients who started off just with that idea. So in answer to your question, if all I ever did was show you that, I wouldn’t make any money, but I would wager that we would get to know each other a little better and do something in the future. So like I said a minute ago, the purpose of the call was to invite you along to show you how that idea works. It doesn't cost you anything, and at the end of the meeting, you go off and have a think about it, and the ball is in your court. So apart from 20 minutes, what have you got to lose? Nothing. Great. How are you fixed next week?",
+        response: "If I show you that idea and that saves you, let's say, 3 grand a month—because that's what your mortgage is costing you—after six months, how much more money do you have? 18 grand more. So you've got 36 grand more after a year, right? So if I have saved you 36 grand over the course of a year and then at the end of that year, you're thinking, I wonder what I should do with x grand and where I should invest it? I'd like to think you were a good enough person to give me a crack at telling you. Right? You're at least going to give me a try because you can't owe me that obligation morally, if not professionally so. That's how it works. I can't tell you the number of clients that have gone on to become long-term clients who started off just with that idea. So in answer to your question, if all I ever did was show you that, I wouldn't make any money, but I would wager that we would get to know each other a little better and do something in the future. So like I said a minute ago, the purpose of the call was to invite you along to show you how that idea works. It doesn't cost you anything, and at the end of the meeting, you go off and have a think about it, and the ball is in your court. So apart from 20 minutes, what have you got to lose? Nothing. Great. How are you fixed next week?",
         theory: "Acknowledge the Skepticism Openly: Instead of getting defensive, validate the prospect's skepticism, making it a conversation."
       },
       {
