@@ -83,7 +83,7 @@ export default function Home() {
         <div className="bg-gradient-to-br from-white to-[#f8f8f8] p-8 rounded-lg shadow-xl border border-white/50 backdrop-blur-sm min-h-[400px] transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-xl font-bold mb-6 text-[#3d0000] border-b border-[#3d0000]/10 pb-3">Suggested Response</h2>
           <p className="text-black text-lg leading-relaxed">
-            {activeContent?.response || 'Select an option above to see the suggested response.'}
+            {activeContent?.response || currentSection?.defaultResponse || 'Select an option above to see the suggested response.'}
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export default function Home() {
         <div className="bg-gradient-to-br from-white to-[#f8f8f8] p-8 rounded-lg shadow-xl border border-white/50 backdrop-blur-sm min-h-[400px] transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-xl font-bold mb-6 text-[#3d0000] border-b border-[#3d0000]/10 pb-3">Theory & Reasoning</h2>
           <p className="text-black text-lg leading-relaxed">
-            {activeContent?.theory || 'The explanation for the suggested response will appear here.'}
+            {activeContent?.theory || currentSection?.defaultTheory || 'The explanation for the suggested response will appear here.'}
           </p>
         </div>
       </div>
